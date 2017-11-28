@@ -37,6 +37,27 @@ var gif = []
 
 
 //let's make some functions
+function game(argument) {
+	console.log('game is working yay!')
+	gamePage = "<p class='timerP text-center'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + question[questionCount] + "</p><p class='answer'>" + answer[questionCount][0] + "</p><p class='answer'>"+answer[questionCount][1]+"</p><p class='answer'>"+answer[questionCount][2]+"</p><p class='answer'>"+answer[questionCount][3]+"</p>"
+	$('.gameDiv').html(gamePage);
+}
+
+function countdown(argument) {
+	clock = setInterval(done, 1000);
+	function done() {
+		if (seconds === 0) {
+			clearInterval(clock);
+			timeout();
+		}
+		if (seconds > 0) {
+			console.log('timer is working')
+			seconds--;
+		}
+		$('.timer').html(seconds);
+	}
+}
+
 function timeout(argument) {
 	console.log('out of time')
 	timeoutCount++;
@@ -59,28 +80,6 @@ function delay(argument) {
 	}
 }
 
-function countdown(argument) {
-	clock = setInterval(done, 1000);
-	function done() {
-		if (seconds === 0) {
-			clearInterval(clock);
-			timeout();
-		}
-		if (seconds > 0) {
-			console.log('timer is working')
-			seconds--;
-		}
-		$('.timer').html(seconds);
-	}
-}
-
-function game(argument) {
-	console.log('game is working yay!')
-	gamePage = "<p class='timerP text-center'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + question[questionCount] + "</p><p class='answer'>" + answer[questionCount][0] + "</p><p class='answer'>"+answer[questionCount][1]+"</p><p class='answer'>"+answer[questionCount][2]+"</p><p class='answer'>"+answer[questionCount][3]+"</p>"
-	$('.gameDiv').html(gamePage);
-}
-
-
 function win(argument) {
 	console.log('good job!')
 	winCount++
@@ -98,13 +97,23 @@ function loss(argument) {
 }
 
 function gameOver(argument) {
+	console.log('game over.  play agian?')
 	gamePage = "<p class='timerP text-center'>Time Remaining: <span class='timer'>" + seconds + "</span></p>" + "<p class='text-center'>Thanks for playing!  Here are your results:" + "</p>" + "<p class='results'>Correct Answers: " + winCount + "</p>" + "<p>Wrong Answers: " + lossCount + "</p>" + "<p>Unanswered: " + timeoutCount + "</p>" + "<p class='text-center'><a class='resetBtn btn btn-primary btn-lg btn-block ' href='#' role='button'>Take the Quiz Again!</a></p>"
 	$('.gameDiv').html(gamePage);
 }
 
 function reset(argument) {
-	// body...
+	console.log('reset counters. run game and countdown')
+	questionCount = 0;
+	winCount = 0;
+	lossCount = 0;
+	timeoutCount = 0;
+	seconds = 30;
+	game();
+	countdown();
 }
+
+
 
 
 //THIS IS MY TRIVIA GAME!!  get page ready for jQuery
@@ -142,49 +151,3 @@ $("body").on("click", ".resetBtn", function(){
 	reset()
 })
 })
-
-
-
-
-
-//start button on click:
-	//hide button
-	//begin timer
-	//populate random question
-	//provide choice answers
-//if player chooses incorrectly or if time remaining = 0
-	//tell player 'you are wrong' or 'out of time'
-	//provide correct answer
-	//insert fun gif
-//if player chooses correctly
-	//tell player 'you are correct'
-	//insert fun gif
-//at end:
-	//timer stops
-	//message: all done.  here's how you did:
-	//correct answers
-	//incorrect answers
-	//unanswered
-	//start over-->onclick
-		//reset game
-			//reset counters
-
-
-// //Let's make some variables!!
-// var trivia = []
-
-
-// //counters
-// var correctCount == 0
-// var incorrectCount == 0
-// var timer == 0
-
-// //array of Questions and Answers
-
-
-// //booleans
-// var outOfTime == false	//
-// var correct == false	//
-// var gameOver == false	//
-
-// //functions
