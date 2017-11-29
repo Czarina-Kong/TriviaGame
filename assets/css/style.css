@@ -1,0 +1,39 @@
+body{
+	background-image: url('../images/background.jpeg');
+	background-size: 120%;
+	background-position: right fixed;
+}
+
+.jumbotron{
+	background: none;
+	color: white;
+}
+
+.buttonDiv{
+	margin: auto;
+	margin-top: 50px;
+	width: 600px;
+}
+
+.timerP{
+	margin-top:30px;
+}
+
+.question{
+	color: white;
+	padding-bottom: 20px;
+}
+
+.answer{
+	border-radius:3px;
+	background-color: white;
+	color:black;
+	padding:5px;
+	padding-left: 20px;
+	width:600px;
+	margin:auto;
+
+}
+.answer:hover {
+	opacity: 0.7;
+}
