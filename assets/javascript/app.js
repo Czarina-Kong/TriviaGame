@@ -11,6 +11,10 @@ var lossCount = 0
 var timeoutCount = 0
 
 
+var disney = new Audio('assets/images/Disney.mp3');
+var wand = new Audio('assets/images/wand.mp3')
+
+
 var question = ["In Aladdin, what is the name of Jasmine's pet tiger?",
 	"In the Lion King, where does Mufasa and his family live?",
 	"In Beauty and the Beast, how many eggs does Gaston eat for breakfast?",
@@ -31,7 +35,7 @@ var answer = [['Rajah', 'Jafar', 'Abu', 'Iago'],
 	['May Showers','Autumn Leaf','Little Red','Briar Rose'],
 	["Prince Eric's Birthday","Prince Eric's Battle Victory","Prince Eric's Engagement", "Prince Eric's Homecoming"],
 	['Jasmine','Snow White','Pocahontas','Rapunzel']]
-var correct = ['Rajah','Pride Rock','5 dozen','a parrot','Angry',
+var correct = ['Rajah','Pride Rock','5 Dozen','A Parrot','Angry',
 	'Mushu','gold','Briar Rose',"Prince Eric's Birthday",'Pocahontas']
 var gif = ["<img class='gif center-block' src='https://media.giphy.com/media/huA20PI64xIhW/giphy.gif'>",
 	"<img class='gif center-block' src='https://media.giphy.com/media/FJCzc8XyKv7eo/giphy.gif'>",
@@ -42,7 +46,7 @@ var gif = ["<img class='gif center-block' src='https://media.giphy.com/media/huA
 	"<img class='gif center-block' src='https://media.giphy.com/media/10iuzA464T5OF2/giphy.gif'>", 
 	"<img class='gif center-block' src='https://media.giphy.com/media/cAnQDetJF54Ri/giphy.gif'>", 
 	"<img class='gif center-block' src='https://media.giphy.com/media/tOpBKMuYEGypW/giphy.gif'>", 
-	"<img class='gif center-block' src='https://media.giphy.com/media/J2pFtdT1X9K36/giphy.gif'>"];
+	"<img class='gif center-block' src='https://media.giphy.com/media/J2pFtdT1X9K36/giphy.gif'>"]
 
 
 //let's make some functions
@@ -139,12 +143,14 @@ $(document).ready(function(){
 
 //on startBtn click, run game and start countdown
 	$("body").on("click", ".startBtn", function(){
+		disney.play()
 		game();
 		countdown();
 	})
 
 //on clicked answer => userAnswer.  if correct, clear clock and alert win; else, clear clock and alert loss
 	$("body").on("click", ".answer", function(){
+		wand.play()
 		console.log(this)
 		userAnswer = $(this).text()
 		console.log('userAnswer = ' + userAnswer)
