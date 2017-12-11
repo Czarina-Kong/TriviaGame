@@ -36,7 +36,7 @@ var answer = [['Rajah', 'Jafar', 'Abu', 'Iago'],
 	["Prince Eric's Birthday","Prince Eric's Battle Victory","Prince Eric's Engagement", "Prince Eric's Homecoming"],
 	['Jasmine','Snow White','Pocahontas','Rapunzel']]
 var correct = ['Rajah','Pride Rock','5 Dozen','A Parrot','Angry',
-	'Mushu','gold','Briar Rose',"Prince Eric's Birthday",'Pocahontas']
+	'Mushu','Gold','Briar Rose',"Prince Eric's Birthday",'Pocahontas']
 var gif = ["<img class='gif center-block' src='https://media.giphy.com/media/huA20PI64xIhW/giphy.gif'>",
 	"<img class='gif center-block' src='https://media.giphy.com/media/FJCzc8XyKv7eo/giphy.gif'>",
 	"<img class='gif center-block' src='https://media.giphy.com/media/SAYKONNBVkAdW/giphy.gif'>", 
